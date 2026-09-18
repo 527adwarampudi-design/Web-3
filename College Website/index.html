@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stony Brook University | Discover What's Next</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         WELCOME POPUP
+    =================================================== -->
+
+    <div id="welcomePopup" class="popup-overlay">
+
+        <div class="popup-box">
+
+            <button id="closePopup" class="close-btn" aria-label="Close">
+                &times;
+            </button>
+
+            <div class="popup-logo">
+                SBU
+            </div>
+
+            <p class="popup-small">
+                WELCOME, FUTURE SEAWOLF
+            </p>
+
+            <h2>
+                Let's make this<br>
+                about YOU.
+            </h2>
+
+            <label for="nameInput">
+                What's your name?
+            </label>
+
+            <input
+                type="text"
+                id="nameInput"
+                placeholder="Enter your name..."
+            >
+
+            <p id="errorMessage" class="error-message">
+                Please enter your name.
+            </p>
+
+            <button id="exploreButton" class="explore-btn">
+                LET'S EXPLORE
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         NAVIGATION
+    =================================================== -->
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="#home">
+                STONY BROOK
+            </a>
+
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNav"
+                aria-controls="mainNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="mainNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">
+                            ABOUT
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#programs">
+                            PROGRAMS
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#life">
+                            STUDENT LIFE
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#admissions">
+                            ADMISSIONS
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link nav-quiz" href="#quiz">
+                            FIND YOUR PATH
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ==================================================
+         HERO
+    =================================================== -->
+
+    <section id="home" class="hero-section">
+
+
+        <!-- HERO IMAGE CAROUSEL -->
+
+        <div
+            id="heroCarousel"
+            class="carousel slide hero-carousel"
+            data-bs-ride="carousel"
+            data-bs-interval="5000"
+        >
+
+            <div class="carousel-inner">
+
+
+                <!-- IMAGE 1 -->
+
+                <div class="carousel-item active">
+
+                    <img
+                        src="hero-campus.jpg"
+                        alt="Stony Brook University campus"
+                    >
+
+                </div>
+
+
+                <!-- IMAGE 2 -->
+
+                <div class="carousel-item">
+
+                    <img
+                        src="hero-students.jpg"
+                        alt="Students at Stony Brook University"
+                    >
+
+                </div>
+
+
+                <!-- IMAGE 3 -->
+
+                <div class="carousel-item">
+
+                    <img
+                        src="hero-research.jpg"
+                        alt="Research at Stony Brook University"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- DARK GRADIENT OVER IMAGE -->
+
+            <div class="hero-overlay"></div>
+
+
+            <!-- PREVIOUS -->
+
+            <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide="prev"
+            >
+                <span class="carousel-control-prev-icon"></span>
+
+                <span class="visually-hidden">
+                    Previous
+                </span>
+            </button>
+
+
+            <!-- NEXT -->
+
+            <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide="next"
+            >
+                <span class="carousel-control-next-icon"></span>
+
+                <span class="visually-hidden">
+                    Next
+                </span>
+            </button>
+
+
+            <!-- SLIDE INDICATORS -->
+
+            <div class="carousel-indicators">
+
+                <button
+                    type="button"
+                    data-bs-target="#heroCarousel"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                ></button>
+
+                <button
+                    type="button"
+                    data-bs-target="#heroCarousel"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                ></button>
+
+                <button
+                    type="button"
+                    data-bs-target="#heroCarousel"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                ></button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- HERO TEXT -->
+
+        <div class="hero-content">
+
+            <p class="hero-welcome">
+                WELCOME,
+                <span class="user-name">FUTURE SEAWOLF</span>.
+            </p>
+
+
+            <h1>
+                STONY BROOK
+                <span>UNIVERSITY</span>
+            </h1>
+
+
+            <p class="hero-tagline">
+                DISCOVER WHAT'S NEXT.
+            </p>
+
+
+            <p class="hero-description">
+                Where curiosity becomes discovery.
+            </p>
+
+
+            <a href="#about" class="hero-link">
+                EXPLORE STONY BROOK
+                <span>↓</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         ABOUT
+    =================================================== -->
+
+    <section id="about" class="image-section about-section">
+
+
+        <!-- BACKGROUND IMAGE -->
+
+        <div class="section-image"></div>
+
+
+        <!-- CONTENT -->
+
+        <div class="section-content">
+
+            <p class="section-number">
+                01 / ABOUT
+            </p>
+
+
+            <h2>
+                MORE THAN<br>
+                A PLACE TO LEARN.
+            </h2>
+
+
+            <p>
+                Stony Brook University is a leading public research
+                university on Long Island, combining rigorous academics,
+                discovery, and opportunities beyond the classroom.
+            </p>
+
+
+            <!-- QUICK FACTS -->
+
+            <div class="about-facts">
+
+                <div>
+                    <strong>200+</strong>
+                    <span>PROGRAMS</span>
+                </div>
+
+                <div>
+                    <strong>R1</strong>
+                    <span>RESEARCH</span>
+                </div>
+
+                <div>
+                    <strong>60 MI</strong>
+                    <span>FROM NYC</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         PROGRAMS
+    =================================================== -->
+
+    <section id="programs" class="image-section programs-section">
+
+
+        <div class="section-image"></div>
+
+
+        <div class="section-content">
+
+            <p class="section-number">
+                02 / PROGRAMS
+            </p>
+
+
+            <h2>
+                FIND SOMETHING<br>
+                WORTH EXPLORING.
+            </h2>
+
+
+            <p>
+                Explore programs that connect what you are curious about
+                with opportunities to create, discover, and make an impact.
+            </p>
+
+
+            <!-- PROGRAM LIST -->
+
+            <div class="program-list">
+
+
+                <article class="program-item">
+
+                    <span>01</span>
+
+                    <div>
+
+                        <h3>
+                            COMPUTER SCIENCE
+                        </h3>
+
+                        <p>
+                            Technology • Innovation • Problem Solving
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="program-item">
+
+                    <span>02</span>
+
+                    <div>
+
+                        <h3>
+                            BIOMEDICAL ENGINEERING
+                        </h3>
+
+                        <p>
+                            Engineering • Biology • Healthcare
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="program-item">
+
+                    <span>03</span>
+
+                    <div>
+
+                        <h3>
+                            BIOLOGY
+                        </h3>
+
+                        <p>
+                            Science • Research • Discovery
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         STUDENT LIFE
+    =================================================== -->
+
+    <section id="life" class="image-section life-section">
+
+
+        <div class="section-image"></div>
+
+
+        <div class="section-content">
+
+            <p class="section-number">
+                03 / STUDENT LIFE
+            </p>
+
+
+            <h2>
+                YOUR LIFE<br>
+                HAPPENS HERE.
+            </h2>
+
+
+            <p>
+                College isn't only about what happens in a classroom.
+                Find communities, events, organizations, and experiences
+                that make campus feel like your own.
+            </p>
+
+
+            <!-- STUDENT LIFE TAGS -->
+
+            <div class="life-tags">
+
+                <span>300+ CLUBS</span>
+
+                <span>ATHLETICS</span>
+
+                <span>CAMPUS EVENTS</span>
+
+                <span>HOUSING</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         COST + ADMISSIONS
+    =================================================== -->
+
+    <section id="admissions" class="image-section admissions-section">
+
+
+        <div class="section-image"></div>
+
+
+        <div class="section-content">
+
+            <p class="section-number">
+                04 / COST + ADMISSIONS
+            </p>
+
+
+            <h2>
+                PLAN YOUR<br>
+                NEXT STEP.
+            </h2>
+
+
+            <!-- COST -->
+
+            <div class="admissions-grid">
+
+
+                <div>
+
+                    <span>
+                        NY RESIDENT
+                    </span>
+
+                    <strong>
+                        $34,819
+                    </strong>
+
+                    <p>
+                        Estimated yearly cost
+                    </p>
+
+                </div>
+
+
+
+                <div>
+
+                    <span>
+                        OUT OF STATE
+                    </span>
+
+                    <strong>
+                        $58,799
+                    </strong>
+
+                    <p>
+                        Estimated yearly cost
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <a href="#" class="outline-link">
+                EXPLORE ADMISSIONS →
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         FIND YOUR PATH
+    =================================================== -->
+
+    <section id="quiz" class="quiz-section">
+
+
+        <div class="quiz-background"></div>
+
+
+        <div class="quiz-content">
+
+
+            <p class="section-number">
+                05 / FIND YOUR PATH
+            </p>
+
+
+            <h2>
+                SO, WHAT'S<br>
+                YOUR THING?
+            </h2>
+
+
+            <p>
+                You've seen Stony Brook.
+                Now let's find where you might fit in.
+            </p>
+
+
+            <!-- QUIZ START -->
+
+            <button id="startQuiz" class="quiz-start">
+                FIND MY PATH →
+            </button>
+
+
+            <!-- THIS WILL BE USED
+                 WHEN WE BUILD THE QUIZ -->
+
+            <div id="quizQuestions" class="quiz-questions">
+
+                <!-- Question 1 -->
+
+                <div class="quiz-question">
+
+                    <p>
+                        What are you most excited to explore?
+                    </p>
+
+                    <button class="quiz-option">
+                        Technology
+                    </button>
+
+                    <button class="quiz-option">
+                        Health + Science
+                    </button>
+
+                    <button class="quiz-option">
+                        Arts + Humanities
+                    </button>
+
+                    <button class="quiz-option">
+                        Environment
+                    </button>
+
+                </div>
+
+
+                <!-- Question 2 -->
+
+                <div class="quiz-question">
+
+                    <p>
+                        What sounds most like you?
+                    </p>
+
+                    <button class="quiz-option">
+                        Discovering new things
+                    </button>
+
+                    <button class="quiz-option">
+                        Creating solutions
+                    </button>
+
+                    <button class="quiz-option">
+                        Helping people
+                    </button>
+
+                    <button class="quiz-option">
+                        Making an impact
+                    </button>
+
+                </div>
+
+
+                <!-- RESULT -->
+
+                <div id="quizResult" class="quiz-result">
+
+                    <p>
+                        YOUR STONY BROOK PATH
+                    </p>
+
+                    <h3>
+                        <span class="user-name">
+                            FUTURE SEAWOLF
+                        </span>,
+                        LET'S EXPLORE.
+                    </h3>
+
+                    <p id="resultText">
+                        Your answers will help create a personalized
+                        recommendation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         FINAL CTA
+    =================================================== -->
+
+    <section class="final-section">
+
+
+        <div class="final-overlay"></div>
+
+
+        <div class="final-content">
+
+
+            <p>
+                READY,
+                <span class="user-name">
+                    FUTURE SEAWOLF
+                </span>?
+            </p>
+
+
+            <h2>
+                YOUR STORY<br>
+                STARTS HERE.
+            </h2>
+
+
+            <div class="final-buttons">
+
+
+                <a href="#" class="final-button">
+                    APPLY NOW →
+                </a>
+
+
+                <a href="#" class="final-button secondary">
+                    VISIT CAMPUS →
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    =================================================== -->
+
+    <footer>
+
+        <strong>
+            STONY BROOK UNIVERSITY
+        </strong>
+
+        <span>
+            DISCOVER WHAT'S NEXT.
+        </span>
+
+    </footer>
+
+
+
+    <!-- ==================================================
+         BOOTSTRAP JAVASCRIPT
+    =================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- MY JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
