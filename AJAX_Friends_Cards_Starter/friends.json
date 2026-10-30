@@ -1,2 +1,33 @@
+
 [
+  {
+    "name": "Jordan",
+    "relationship": "Teammate",
+    "detail": "Enjoys building creative games.",
+    "hobbies": ["Coding", "Soccer", "Music"]
+  },
+  {
+    "name": "Maya",
+    "relationship": "Best Friend",
+    "detail": "Loves solving mysteries.",
+    "hobbies": ["Reading", "Baking", "Painting"]
+  },
+  {
+    "name": "Ethan",
+    "relationship": "Classmate",
+    "detail": "Enjoys learning how technology works.",
+    "hobbies": ["Robotics", "Gaming", "Photography"]
+  },
+  {
+    "name": "Sofia",
+    "relationship": "Neighbor",
+    "detail": "Likes exploring new places.",
+    "hobbies": ["Hiking", "Traveling", "Cooking"]
+  },
+  {
+    "name": "Alex",
+    "relationship": "Band Friend",
+    "detail": "Enjoys performing music with friends.",
+    "hobbies": ["Music", "Drawing", "Swimming"]
+  }
 ]
