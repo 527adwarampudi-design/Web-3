@@ -1,9 +1,8 @@
-// =============================================================
-// 2.03 Fetch + async/await: Friends Cards (STARTER)
-// This version loads friends.json with XMLHttpRequest, and it works.
-// Your job: convert loadFriends() to fetch (Checkpoint 2), then
-// to async/await (Checkpoint 3).
-// =============================================================
+
+/* =============================================================
+   2.03 Fetch + async/await: Friends Cards
+   This version loads friends.json using async/await.
+   ============================================================= */
 
 // Supplied page connections. Keep these IDs unchanged.
 const loadButton = document.getElementById("loadFriends");
@@ -13,35 +12,44 @@ const statusMessage = document.getElementById("status");
 loadButton.addEventListener("click", loadFriends);
 
 // -------------------------------------------------------------
-// loadFriends: CURRENT VERSION, uses XMLHttpRequest.
-// Checkpoints 2 and 3 replace this whole function.
+// loadFriends: ASYNC/AWAIT VERSION (Checkpoint 3)
 // -------------------------------------------------------------
-function loadFriends() {
+async function loadFriends() {
   statusMessage.classList.remove("error");
   statusMessage.textContent = "Loading friends...";
 
-  const xhr = new XMLHttpRequest();
-  xhr.open("GET", "friends.json");
+  try {
+    // Request the friends.json file.
+    const response = await fetch("friends.json");
 
-  xhr.onload = function () {
-    if (xhr.status === 200) {
-      try {
-        const friends = JSON.parse(xhr.responseText);
-        renderFriends(friends);
-      } catch (error) {
-        showDataError(error);
-      }
+    // Check if the response was successful.
+    // A 404 does not automatically cause fetch() to reject.
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+
+    // Convert the response into JSON data.
+    const friends = await response.json();
+
+    // Display the friends as cards.
+    renderFriends(friends);
+
+  } catch (error) {
+
+    // If the JSON data is broken, show the data error.
+    if (error instanceof SyntaxError) {
+      showDataError(error);
+
     } else {
+      // Handle loading errors such as 404 or offline.
       showLoadError();
     }
-  };
-
-  xhr.onerror = showLoadError;
-  xhr.send();
+  }
 }
 
 // -------------------------------------------------------------
-// renderFriends: turns the array into cards. Do not change it for this lesson.
+// renderFriends: turns the array into cards.
+// Do not change this function for this lesson.
 // -------------------------------------------------------------
 function renderFriends(friends) {
   let cardsHTML = "";
@@ -69,7 +77,8 @@ function renderFriends(friends) {
 // Supplied helpers. Do not change these.
 // =============================================================
 
-// Call when the file cannot be loaded: wrong name, 404, or no connection.
+// Call when the file cannot be loaded:
+// wrong name, 404, or no connection.
 function showLoadError() {
   cardsContainer.innerHTML = "";
   statusMessage.classList.add("error");
