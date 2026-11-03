@@ -4,14 +4,51 @@
 // Write the rest of the JavaScript yourself.
 // =============================================================
 
-const API = "PASTE YOUR /exec WEB ADDRESS HERE";
+const API = "https://script.google.com/macros/s/AKfycbw5448aRS4ymDEFGoundA1TzjBqJMMVanddMY_c04gTo8I41MrAy2OROlsZI8cwiTrV/exec";
+
+const statusMessage = document.getElementById('status');
+const menuContainer = document.getElementById('menu');
+const filterContainer = document.getElementById('filters');
+
+
+let allItems = []; 
+
+
 
 // 1. async function loadMenu()
 //    fetch the API, check response.ok, return the JSON.
 
+
+async function loadMenu() {
+    const response = await fetch(API);
+    if (!response.ok) {
+        throw new Error("`HTTP error!" + response.status);
+    }
+const items = await response.json();
+return items;
+}
+
+
+
 // 2. async function startMenu()
 //    Show a loading message. In try: load the menu, build the
 //    buttons, show every item. In catch: show a friendly error.
+
+
+async function startMenu() {
+    statusMessage.textContent = "Loading menu...";
+    try {
+        allItems = await loadMenu();
+        //buildFilters()
+        //showMenu()
+        statusMessage.textContent = "";
+    }
+
+    catch(error){
+        statusMessage.textContent = "Sorry, we can't load the menu right now. Please try again later.";
+        console.log(error);
+    }
+}
 
 // 3. function showMenu(items)
 //    One heading per category, then a card for each item:
