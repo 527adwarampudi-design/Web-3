@@ -1,0 +1,177 @@
+[
+  {
+    "category": "Coffee",
+    "name": "Drip Coffee",
+    "description": "Our house blend, roasted in small batches.",
+    "price": 2.75,
+    "image": "img/coffee-drip.png",
+    "popular": true,
+    "soldOut": false,
+    "tags": []
+  },
+  {
+    "category": "Coffee",
+    "name": "Oat Milk Latte",
+    "description": "Double espresso with steamed oat milk.",
+    "price": 5.25,
+    "image": "img/coffee-latte.png",
+    "popular": true,
+    "soldOut": false,
+    "tags": [
+      "vegan"
+    ]
+  },
+  {
+    "category": "Coffee",
+    "name": "Maple Cortado",
+    "description": "Espresso, warm milk, and a touch of real maple.",
+    "price": 4.75,
+    "image": "img/coffee-cortado.png",
+    "popular": false,
+    "soldOut": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "category": "Coffee",
+    "name": "Cold Brew",
+    "description": "Steeped for 18 hours. Smooth and strong.",
+    "price": 4.5,
+    "image": "img/coffee-coldbrew.png",
+    "popular": false,
+    "soldOut": false,
+    "tags": []
+  },
+  {
+    "category": "Bakery",
+    "name": "Butter Croissant",
+    "description": "Flaky, golden, and baked every morning.",
+    "price": 3.75,
+    "image": "img/bakery-croissant.png",
+    "popular": true,
+    "soldOut": false,
+    "tags": []
+  },
+  {
+    "category": "Bakery",
+    "name": "Blueberry Muffin",
+    "description": "Loaded with berries and a crumb top.",
+    "price": 3.5,
+    "image": "img/bakery-muffin.png",
+    "popular": false,
+    "soldOut": true,
+    "tags": []
+  },
+  {
+    "category": "Bakery",
+    "name": "Cinnamon Knot",
+    "description": "Soft dough twisted with cinnamon sugar.",
+    "price": 4.25,
+    "image": "img/bakery-cinnamon.png",
+    "popular": false,
+    "soldOut": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "category": "Bakery",
+    "name": "Flourless Chocolate Brownie",
+    "description": "Rich, fudgy, and made without flour.",
+    "price": 3.95,
+    "image": "img/bakery-brownie.png",
+    "popular": false,
+    "soldOut": false,
+    "tags": [
+      "gluten-free"
+    ]
+  },
+  {
+    "category": "Breakfast",
+    "name": "Avocado Toast",
+    "description": "Smashed avocado, chili flakes, and lemon on sourdough.",
+    "price": 9.5,
+    "image": "img/breakfast-avocado.png",
+    "popular": true,
+    "soldOut": false,
+    "tags": [
+      "vegan"
+    ]
+  },
+  {
+    "category": "Breakfast",
+    "name": "Bacon, Egg & Cheese",
+    "description": "On a toasted brioche roll.",
+    "price": 7.75,
+    "image": "img/breakfast-bec.png",
+    "popular": true,
+    "soldOut": false,
+    "tags": []
+  },
+  {
+    "category": "Breakfast",
+    "name": "Yogurt Parfait",
+    "description": "Greek yogurt, house granola, and fresh berries.",
+    "price": 6.25,
+    "image": "img/breakfast-parfait.png",
+    "popular": false,
+    "soldOut": false,
+    "tags": [
+      "gluten-free"
+    ]
+  },
+  {
+    "category": "Breakfast",
+    "name": "Breakfast Burrito",
+    "description": "Eggs, potatoes, peppers, and cheddar.",
+    "price": 9.25,
+    "image": "img/breakfast-burrito.png",
+    "popular": false,
+    "soldOut": false,
+    "tags": []
+  },
+  {
+    "category": "Lunch",
+    "name": "Turkey Pesto Panini",
+    "description": "Roasted turkey, pesto, and mozzarella, pressed hot.",
+    "price": 11.5,
+    "image": "img/lunch-panini.png",
+    "popular": true,
+    "soldOut": false,
+    "tags": []
+  },
+  {
+    "category": "Lunch",
+    "name": "Harvest Salad",
+    "description": "Greens, roasted squash, apples, and pecans.",
+    "price": 10.75,
+    "image": "img/lunch-salad.png",
+    "popular": false,
+    "soldOut": false,
+    "tags": [
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "category": "Lunch",
+    "name": "Tomato Soup & Grilled Cheese",
+    "description": "Creamy tomato soup with a cheddar melt.",
+    "price": 10.25,
+    "image": "img/lunch-soup.png",
+    "popular": false,
+    "soldOut": false,
+    "tags": []
+  },
+  {
+    "category": "Lunch",
+    "name": "Chicken Caesar Wrap",
+    "description": "Grilled chicken, romaine, and parmesan.",
+    "price": 10.95,
+    "image": "img/lunch-wrap.png",
+    "popular": false,
+    "soldOut": false,
+    "tags": []
+  }
+]
