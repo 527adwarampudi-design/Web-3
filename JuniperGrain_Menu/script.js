@@ -143,3 +143,22 @@ function buildFilters () {
 
 // 5. Call startMenu() when the page opens.
 startMenu()
+
+const searchInput = document.getElementById('search-input')
+
+searchInput.addEventListener('input', function (e) {
+  const query = e.target.value.toLowerCase()
+  const cards = document.querySelectorAll('.card')
+
+  cards.forEach(card => {
+    const text = card.textContent.toLowerCase()
+    card.style.display = text.includes(query) ? 'flex' : 'none'
+  })
+})
+// Toggle category visibility on mobile tap
+document.querySelectorAll('main h2').forEach(heading => {
+  heading.addEventListener('click', () => {
+    const grid = heading.nextElementSibling;
+    grid.classList.toggle('is-hidden');
+  });
+});
