@@ -1,16 +1,18 @@
 /* =============================================================
-   Juniper & Grain: Main Stylesheet
+   Juniper & Grain: Cozy Holiday Edition Stylesheet
    ============================================================= */
 
 :root {
-  --sage: #3f5a46;
-  --sage-light: #52735b;
-  --terracotta: #c8693f;
-  --cream: #f7f2e9;
-  --cream-dark: #eee4d3;
-  --espresso: #2b211c;
-  --white: #ffffff;
-  --gray-light: #e0d8cc;
+  --evergreen: #1e3b2b;       /* Deep winter juniper pine */
+  --evergreen-light: #2d543e;
+  --cranberry: #9e2a2b;       /* Rich festive berry red */
+  --cranberry-bright: #b83335;
+  --gold: #c9a24b;            /* Warm holiday candlelight gold */
+  --gold-soft: #f3e9d2;
+  --snow-bg: #f4efe6;         /* Warm winter parchment/snow */
+  --card-white: #fffdf9;      /* Creamy snowflake white */
+  --espresso: #261c17;        /* Dark roasted coffee text */
+  --border-frost: #dcd3c4;
 }
 
 /* Global Reset & Typography */
@@ -20,74 +22,132 @@
   padding: 0;
 }
 
+/* Subtle Falling Snow Background Pattern */
+@keyframes snowfall {
+  0% { background-position: 0px 0px, 0px 0px; }
+  100% { background-position: 400px 800px, 300px 600px; }
+}
+
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  background-color: var(--cream);
+  font-family: 'Georgia', 'Palatino', system-ui, -apple-system, sans-serif;
+  background-color: var(--snow-bg);
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.85) 2px, transparent 2px),
+    radial-gradient(rgba(201, 162, 75, 0.25) 1.5px, transparent 1.5px);
+  background-size: 90px 90px, 60px 60px;
+  background-position: 0 0, 30px 30px;
+  animation: snowfall 25s linear infinite;
   color: var(--espresso);
   line-height: 1.6;
   padding-bottom: 4rem;
+  cursor: url('img/logo (1).png'), auto;
 }
 
-/* Header & Logo */
+button, a, .card {
+  cursor: url('img/logo (1).png'), pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Festive Evergreen & Gold Header */
 header {
-  background-color: var(--sage);
-  color: var(--white);
-  text-align: center;
-  padding: 2.5rem 1rem 2rem;
-  box-shadow: 0 4px 12px rgba(43, 33, 28, 0.1);
+  background: linear-gradient(135deg, rgba(30, 59, 43, 0.97), rgba(20, 42, 30, 0.97));
+  backdrop-filter: blur(8px);
+  color: var(--card-white);
+  padding: 1rem 1.25rem;
+  border-bottom: 3px solid var(--gold);
+  box-shadow: 0 4px 16px rgba(30, 59, 43, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Twinkling Gold Halo on Logo */
+@keyframes goldGlow {
+  0%, 100% { box-shadow: 0 0 8px rgba(201, 162, 75, 0.4); }
+  50% { box-shadow: 0 0 18px rgba(201, 162, 75, 0.9); }
 }
 
 .logo {
-  max-width: 90px;
+  max-width: 46px;
   height: auto;
-  margin-bottom: 0.75rem;
   border-radius: 50%;
-  border: 3px solid var(--cream);
+  border: 2px solid var(--gold);
+  animation: goldGlow 3s ease-in-out infinite;
 }
 
 header h1 {
-  font-size: 2.25rem;
-  letter-spacing: 0.05em;
+  font-size: 1.55rem;
+  letter-spacing: 0.06em;
   font-weight: 700;
+  color: var(--gold-soft);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Add a subtle holiday sparkle after the title */
+header h1::after {
+  content: " ✦";
+  color: var(--gold);
+  font-size: 1.1rem;
 }
 
 /* Main Container */
 main {
-  max-width: 1100px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
 }
 
-/* Filter Navigation */
+/* Sticky Holiday Filter Ribbon */
 #filters {
+  position: sticky;
+  top: 71px;
+  background-color: rgba(244, 239, 230, 0.92);
+  backdrop-filter: blur(6px);
+  padding: 0.85rem 0;
+  z-index: 10;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.75rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+#filters::-webkit-scrollbar {
+  display: none;
 }
 
 #filters button {
-  background-color: var(--cream-dark);
-  color: var(--espresso);
-  border: 2px solid transparent;
-  padding: 0.5rem 1.25rem;
-  font-size: 0.95rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--card-white);
+  color: var(--evergreen);
+  border: 1.5px solid var(--gold);
+  padding: 0.5rem 1.3rem;
+  font-size: 0.9rem;
   font-weight: 600;
   border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(38, 28, 23, 0.05);
 }
 
 #filters button:hover {
-  background-color: var(--gray-light);
-  transform: translateY(-1px);
+  background-color: var(--gold-soft);
+  transform: translateY(-2px);
 }
 
 #filters button.active {
-  background-color: var(--terracotta);
-  color: var(--white);
-  box-shadow: 0 4px 10px rgba(200, 105, 63, 0.3);
+  background: linear-gradient(135deg, var(--cranberry), var(--cranberry-bright));
+  color: var(--card-white);
+  border-color: var(--cranberry);
+  box-shadow: 0 4px 12px rgba(158, 42, 43, 0.35);
 }
 
 /* Status Message */
@@ -95,146 +155,38 @@ main {
   text-align: center;
   font-size: 1.1rem;
   font-style: italic;
-  color: var(--sage-light);
+  color: var(--evergreen);
   margin: 2rem 0;
 }
 
-/* Category Sections */
+/* Category Headings with Festive Evergreen Accent */
 main h2 {
-  font-size: 1.75rem;
-  color: var(--sage);
-  border-bottom: 2px solid var(--gray-light);
-  padding-bottom: 0.5rem;
+  font-size: 1.8rem;
+  color: var(--evergreen);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 0.4rem;
   margin-top: 2.5rem;
   margin-bottom: 1.5rem;
-}
-
-/* Grid Layout for Cards */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.5rem;
-}
-
-/* Menu Item Cards */
-.card {
-  background-color: var(--white);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(43, 33, 28, 0.06);
   display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  position: relative;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(43, 33, 28, 0.12);
-}
-
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  background-color: var(--gray-light);
-}
-
-.card-body {
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.5rem;
 }
 
-.card p {
-  font-size: 0.9rem;
-  color: #5d4d44;
-  margin-bottom: 1rem;
-  flex-grow: 1;
+main h2::before {
+  content: "❄️";
+  color: var(--cranberry);
+  font-size: 1.2rem;
 }
 
-/* Price & Badges */
-.price {
-  font-weight: 700;
-  color: var(--terracotta);
-  font-size: 1.1rem;
-  margin-top: auto;
+/* 4-Column Row Layout for Desktop */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
 }
 
-.badge {
-  background-color: var(--terracotta);
-  color: var(--white);
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  align-self: center;
-}
-
-/* Tags List */
-.tags {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 0.75rem;
-}
-
-.tags li {
-  background-color: var(--cream);
-  color: var(--sage);
-  font-size: 0.75rem;
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
-  font-weight: 500;
-  border: 1px solid var(--gray-light);
-}
-
-/* Sold Out Styling */
-.card.is-sold {
-  opacity: 0.65;
-}
-
-.card.is-sold img {
-  filter: grayscale(80%);
-}
-
-.sold {
-  color: #a04020;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-  margin-top: 0.5rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.8rem;
-  }
-  main {
-    padding: 1rem;
-  }
-}
-/* Glassmorphism Header */
-header {
-  background-color: rgba(63, 90, 70, 0.95);
-  backdrop-filter: blur(8px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+.grid.is-hidden {
+  display: none;
 }
 
 /* Card Load-in Animation */
@@ -249,50 +201,169 @@ header {
   }
 }
 
+/* Holiday Menu Item Cards */
 .card {
-  animation: fadeInUp 0.4s ease forwards;
-}
-
-/* Hero Badge for Popular Items */
-.badge {
-  background: linear-gradient(135deg, var(--terracotta), #e07a4f);
-  box-shadow: 0 2px 6px rgba(200, 105, 63, 0.4);
-}
-/* Make filters sticky on mobile */
-#filters {
-  position: sticky;
-  top: 0;
-  background-color: var(--cream);
-  padding: 0.75rem 0;
-  z-index: 10;
-  /* Add horizontal scrolling for small screens */
+  background-color: var(--card-white);
+  border-radius: 14px;
+  border: 1px solid var(--border-frost);
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(30, 59, 43, 0.08);
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Hide scrollbar Firefox */
+  flex-direction: column;
+  min-width: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  animation: fadeInUp 0.45s ease forwards;
 }
 
-#filters::-webkit-scrollbar {
-  display: none; /* Hide scrollbar Chrome/Safari */
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: 0 12px 24px rgba(30, 59, 43, 0.16), 0 0 0 1px var(--gold);
 }
 
-#filters button {
-  white-space: nowrap; /* Keep filter text on one line */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background-color: var(--gold-soft);
+  border-bottom: 2px solid var(--gold-soft);
+}
+
+.card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  color: var(--evergreen);
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.card p {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.88rem;
+  color: #574840;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+/* Price & Festive Popular Ribbon Badge */
+.price {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  color: var(--cranberry);
+  font-size: 1.15rem;
+  margin-top: auto;
+}
+
+.badge {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, var(--cranberry), #c43c3e);
+  color: var(--card-white);
+  border: 1px solid var(--gold);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 50px;
+  align-self: center;
   flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(158, 42, 43, 0.3);
 }
+
+/* Dietary Tags List */
+.tags {
+  font-family: system-ui, -apple-system, sans-serif;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.tags li {
+  background-color: var(--gold-soft);
+  color: var(--evergreen);
+  font-size: 0.72rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 50px;
+  font-weight: 600;
+  border: 1px solid rgba(201, 162, 75, 0.45);
+}
+
+/* Sold Out Styling with Subtle Candy-Cane Accent */
+.card.is-sold {
+  opacity: 0.75;
+  border-top: 4px solid repeating-linear-gradient(
+    45deg,
+    var(--cranberry),
+    var(--cranberry) 8px,
+    var(--card-white) 8px,
+    var(--card-white) 16px
+  );
+}
+
+.card.is-sold img {
+  filter: grayscale(85%) contrast(90%);
+}
+
+.sold {
+  font-family: system-ui, -apple-system, sans-serif;
+  color: var(--cranberry);
+  background-color: #fae8e8;
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
+}
+
+/* Tablet Layout (2 cards per row) */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Phone Layout (Horizontal compact cards) */
 @media (max-width: 600px) {
-  /* Switch to horizontal card layout */
+  main {
+    padding: 1rem;
+  }
+
+  #filters {
+    justify-content: flex-start;
+    top: 66px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
   .card {
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
   }
 
   .card img {
     width: 110px;
-    height: 100%;
+    height: auto;
     min-height: 110px;
-    object-fit: cover;
+    border-bottom: none;
+    border-right: 2px solid var(--gold-soft);
   }
 
   .card-body {
@@ -307,83 +378,193 @@ header {
     font-size: 0.85rem;
     margin-bottom: 0.5rem;
   }
-
-  /* Compact header for smaller mobile screens */
-  header {
-    padding: 1.25rem 1rem;
-  }
-
-  .logo {
-    max-width: 60px;
-  }
-
-  header h1 {
-    font-size: 1.5rem;
-  }
-}
-button, .card {
-  -webkit-tap-highlight-color: transparent;
-}
-.grid.is-hidden {
-  display: none;
-}
-/* Change the cursor for the entire page */
-body {
-  cursor: url('img/logo (1).png'), auto;
 }
 
-/* Ensure buttons and links keep a pointer or use your custom cursor */
-button, a, .card {
-  cursor: url('img/logo (1).png'), pointer;
-}
-/* Compact Header */
-header {
-  background-color: var(--sage);
-  color: var(--white);
-  text-align: center;
-  padding: 1rem 1rem 0.85rem; /* Reduced padding */
-  box-shadow: 0 2px 8px rgba(43, 33, 28, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
+/* =============================================================
+   Festive Holiday Menu Cards
+   ============================================================= */
 
-/* Smaller Logo */
-.logo {
-  max-width: 45px; /* Sized down from 90px */
-  height: auto;
-  border-radius: 50%;
-  border: 2px solid var(--cream);
-  margin-bottom: 0; /* Remove old bottom margin */
-}
-
-/* Compact Title */
-header h1 {
-  font-size: 1.5rem; /* Sized down from 2.25rem */
-  letter-spacing: 0.05em;
-  font-weight: 700;
-  margin: 0;
-}
-/* Update the grid container to be a single horizontal row */
-.grid {
-  display: flex;
-  gap: 1.5rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 1rem;
-  /* Hide the scrollbar while keeping smooth scrolling */
-  scrollbar-width: none; 
-}
-
-.grid::-webkit-scrollbar {
-  display: none;
-}
-
-/* Fix card width so they don't squish */
 .card {
-  min-width: 280px;
-  max-width: 280px;
-  flex: 0 0 auto;
-  scroll-snap-align: start;
+  background-color: var(--card-white);
+  border-radius: 14px;
+  /* Gives it a crisp, frosted winter border */
+  border: 1.5px solid var(--border-frost);
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(30, 59, 43, 0.08);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  animation: fadeInUp 0.45s ease forwards;
+}
+
+/* On hover, the card glows like a warm holiday light */
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: 0 12px 24px rgba(30, 59, 43, 0.16), 0 0 0 1px var(--gold);
+}
+
+/* Image with a warm gold undertone */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background-color: var(--gold-soft);
+  border-bottom: 2px solid var(--gold-soft);
+}
+
+.card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Item Name */
+.card h3 {
+  font-size: 1.15rem;
+  color: var(--evergreen);
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* Description */
+.card p {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.88rem;
+  color: #574840;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+/* Price in Festive Cranberry */
+.price {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  color: var(--cranberry);
+  font-size: 1.15rem;
+  margin-top: auto;
+}
+
+/* "Popular" Badge shaped like a festive ornament pill */
+.badge {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, var(--cranberry), #c43c3e);
+  color: var(--card-white);
+  border: 1px solid var(--gold);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 50px;
+  align-self: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(158, 42, 43, 0.3);
+}
+
+/* Dietary Tags styled like tiny gift tags */
+.tags {
+  font-family: system-ui, -apple-system, sans-serif;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.tags li {
+  background-color: var(--gold-soft);
+  color: var(--evergreen);
+  font-size: 0.72rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 50px;
+  font-weight: 600;
+  border: 1px solid rgba(201, 162, 75, 0.45);
+}
+
+/* Sold Out Cards with a subtle candy-cane holiday accent stripe */
+.card.is-sold {
+  opacity: 0.75;
+  border-top: 4px solid repeating-linear-gradient(
+    45deg,
+    var(--cranberry),
+    var(--cranberry) 8px,
+    var(--card-white) 8px,
+    var(--card-white) 16px
+  );
+}
+
+.card.is-sold img {
+  filter: grayscale(85%) contrast(90%);
+}
+
+.sold {
+  font-family: system-ui, -apple-system, sans-serif;
+  color: var(--cranberry);
+  background-color: #fae8e8;
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
+}
+
+
+/* Clean, Mobile-Friendly Holiday Filter Ribbon */
+#filters {
+  position: sticky;
+  top: 66px;
+  background-color: var(--snow-bg);
+  padding: 0.75rem 1rem;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-start; /* Aligns nicely on mobile */
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  box-shadow: 0 4px 12px rgba(30, 59, 43, 0.03);
+}
+
+#filters::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar cleanly on mobile/desktop */
+}
+
+#filters button {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--card-white);
+  color: var(--evergreen);
+  border: 1.5px solid var(--gold);
+  padding: 0.45rem 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: 50px;
+  white-space: nowrap; /* Keeps button text on a single line */
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(38, 28, 23, 0.04);
+}
+
+#filters button:hover {
+  background-color: var(--gold-soft);
+}
+
+#filters button.active {
+  background: linear-gradient(135deg, var(--cranberry), var(--cranberry-bright));
+  color: var(--card-white);
+  border-color: var(--cranberry);
+  box-shadow: 0 3px 10px rgba(158, 42, 43, 0.3);
 }
