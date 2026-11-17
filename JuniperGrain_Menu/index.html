@@ -3,28 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Menu | Juniper & Grain</title>
+  <title>Holiday Menu | Juniper & Grain</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <img src="img/logo.png" alt="Juniper & Grain logo" class="logo">
-    <h1>Our Menu</h1>
+    <div class="brand-lockup" aria-label="Juniper and Grain brand icon">
+      <div class="brand-mark" aria-hidden="true">
+        <span>J</span>
+        <span>&</span>
+        <span>G</span>
+      </div>
+    </div>
+    <div class="header-copy">
+      <h1>Our Holiday Menu</h1>
+      <p class="tagline">Warm drinks, sweet treats, and festive cheer</p>
+    </div>
   </header>
 
+
   <main>
-    <div class="search-box">
-  <input type="text" id="search-input" placeholder="Search coffee, pastries...">
-</div>
+    <div class="search-box" aria-label="Search menu items">
+      <span class="search-icon" aria-hidden="true">✦</span>
+      <input type="text" id="search-input" placeholder="Search coffee, pastries...">
+    </div>
     <!-- Your script builds one button per category in here. -->
     <nav id="filters"></nav>
 
+
     <!-- Loading and error messages go here. -->
     <p id="status"></p>
+
 
     <!-- Your script builds the category headings and item cards in here. -->
     <section id="menu"></section>
   </main>
 </body>
 </html>
+
